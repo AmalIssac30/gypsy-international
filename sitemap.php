@@ -4,59 +4,52 @@ header("Content-Type: application/xml; charset=utf-8");
 // Change this to your site URL
 $baseUrl = "https://www.gypsy-international.com";
 
-// Root directory to scan
-$directory = __DIR__;
-
-// Allowed file extensions
-$extensions = ['html', 'php'];
-
 // Store URLs
 $urls = [];
 
 /**
- * Get last modified date from Git commit history, fallback to filemtime
+ * Predefined routes (clean URLs only)
+ */
+$routes = [
+    '/'           => 'index.html',
+    '/home'       => 'app/webpages/home.html',
+    '/aboutUs'    => 'app/webpages/about.html',
+    '/contactUs'  => 'app/webpages/contactUs.html',
+    '/services'   => 'app/webpages/services.html',
+    '/newupdates' => 'app/webpages/newupdates.html',
+];
+
+// Exclude unwanted pages
+$exclude = ['404', 'default', 'sitedown'];
+
+/**
+ * Get last modified date from file, fallback if unavailable
  */
 function getLastModified($filePath)
 {
-    $lastMod = shell_exec('git log -1 --format="%ci" -- "' . addslashes($filePath) . '" 2>/dev/null');
-    if ($lastMod) {
-        return date('Y-m-d', strtotime(trim($lastMod)));
+    if (!file_exists($filePath)) {
+        return date('Y-m-d'); // fallback if file doesn't exist
     }
     return date('Y-m-d', filemtime($filePath));
 }
 
-/**
- * Recursively scan directory for files with allowed extensions
- */
-function scanDirForSitemap($dir, $baseUrl, $extensions, &$urls)
-{
-    $files = scandir($dir);
-    foreach ($files as $file) {
-        if ($file === '.' || $file === '..') continue;
-
-        $filePath = $dir . DIRECTORY_SEPARATOR . $file;
-
-        if (is_dir($filePath)) {
-            scanDirForSitemap($filePath, $baseUrl, $extensions, $urls);
-        } else {
-            $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
-            if (in_array($ext, $extensions)) {
-                $relativePath = str_replace($_SERVER['DOCUMENT_ROOT'], '', realpath($filePath));
-                $relativePath = str_replace(DIRECTORY_SEPARATOR, '/', $relativePath);
-
-                if (stripos($relativePath, 'sitemap') === false) {
-                    $urls[] = [
-                        'loc' => rtrim($baseUrl, '/') . $relativePath,
-                        'lastmod' => getLastModified($filePath)
-                    ];
-                }
-            }
+// Only use predefined clean routes
+foreach ($routes as $route => $filePath) {
+    // Skip excluded pages
+    foreach ($exclude as $skip) {
+        if (stripos($route, $skip) !== false) {
+            continue 2;
         }
     }
+
+    $urls[] = [
+        'loc' => rtrim($baseUrl, '/') . $route,
+        'lastmod' => getLastModified($filePath)
+    ];
 }
 
-// Scan the root folder
-scanDirForSitemap($directory, $baseUrl, $extensions, $urls);
+// Remove duplicates
+$urls = array_map("unserialize", array_unique(array_map("serialize", $urls)));
 
 // Output XML
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
