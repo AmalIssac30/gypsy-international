@@ -10,4 +10,5 @@ Disallow: /tmp/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://www.gypsy-international.com/sitemap.xml
+Sitemap: https://www.gypsy-international.com/sitemap.php
+
