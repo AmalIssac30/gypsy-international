@@ -4,8 +4,8 @@ a{text-decoration: none !important;}
 p{margin: 0px;color: var(--c-6);}
 section{padding-top: 100px;padding-bottom: 100px;}
 
-.bt1{border-radius: var(--b-r-2);background-color: var(--c-1);display: flex;flex-direction: row;align-items: center;justify-content: center;padding: 12px 20px;box-sizing: border-box;gap: 8px;font-size: 14px;color: var(--c-5);font-family:  var(--secondary-font);height: 40px;width: fit-content;transition: background-color 0.3s ease;cursor: pointer;border: none;}
-.bt1:hover{background-color: var(--c-8);}
+.bt1, #popup-ok-btn{border-radius: var(--b-r-2);background-color: var(--c-1);display: flex;flex-direction: row;align-items: center;justify-content: center;padding: 12px 20px;box-sizing: border-box;gap: 8px;font-size: 14px;color: var(--c-5);font-family:  var(--secondary-font);height: 40px;width: fit-content;transition: background-color 0.3s ease;cursor: pointer;border: none;}
+.bt1:hover, #popup-ok-btn{background-color: var(--c-8);}
 .bt1::after{content: '\f061';font-family: 'Font Awesome 6 free';font-weight: 900;transform: rotate(-30deg);transition: transform 0.3s ease;}
 .bt1:hover::after{transform: rotate(0deg);}
 .ctabt{border-radius: var(--b-r-2);border: 2px solid var(--c-5);background-color: transparent;display: flex;flex-direction: row;align-items: center;justify-content: center;padding: 14px 24px;box-sizing: border-box;gap: 8px;font-size: 18px;color: var(--c-5);font-family:  var(--secondary-font);width: fit-content;height: 50px;}
@@ -98,6 +98,25 @@ section{padding-top: 100px;padding-bottom: 100px;}
 .form-iputs:focus, .form-iputs:active,.form-textarea:focus, .form-textarea:active{box-shadow: none;background-color: #eef2f7;border: none;}
 .form-iputs:focus-visible, .form-textarea:focus-visible{border: 1px solid var(--c-7);box-shadow: none;outline: none;}
 .alert{margin-top: 20px;}
+
+#form-loader {display: none;position: fixed;top: 0; left: 0;width: 100%; height: 100%;background-color: rgba(0, 0, 0, 0.5);z-index: 12;display: flex;justify-content: center;align-items: center;}
+.loader {border: 6px solid #f3f3f3;border-top: 6px solid var(--c-1);border-radius: 50%;width: 50px;height: 50px;animation: spin 1s linear infinite;}
+@keyframes spin {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}
+.spinner {border: 2px solid var(--c-5);border-top: 2px solid var(--c-1);border-radius: 50%;width: 14px;height: 14px;display: inline-block;margin-right: 6px;animation: spin 0.8s linear infinite;vertical-align: middle;}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+#form-popup-overlay {display: none;position: fixed;top: 0; left: 0;width: 100%; height: 100%;background-color: rgba(0, 0, 0, 0.5);z-index: 12;display: flex;justify-content: center;align-items: center;}
+#form-popup{background-color: var(--c-5);padding: 24px 24px;border-radius: var(--b-r-3);box-shadow: 0 2px 10px rgba(0,0,0,0.2);text-align: center;max-width: 400px;width: 400px;}
+#form-popup #form-popup-message{display: block;color: var(--c-1);font-size: var(--f-s-2) !important;margin-bottom: 8px;}
+#form-popup.success{background-color: var(--c-5); color: var(--c-2);}
+#form-popup.error #form-popup-message{color: #ff3333;}
+#form-popup.error #form-popup-subtext{color: var(--c-6);}
+#form-popup button{margin-top: 16px;display: inline-flex;}
 
 .testimonial-card {height: 350px;}
 .testimonial-card .testimonial-img{display: inline-block;border-radius: 12px;width: 100%;height: 100%;object-fit: cover;}
