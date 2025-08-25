@@ -2,7 +2,7 @@ html{scroll-behavior: smooth;}
 body{ font-family: var(--secondary-font);margin: 0;padding: 0;box-sizing: border-box;transition: background 0.3s; }
 a{text-decoration: none !important;}
 p{margin: 0px;color: var(--c-6);}
-section{padding-top: 100px;padding-bottom: 100px;}
+section{padding-top: 80px;padding-bottom: 80px;}
 
 .bt1, #popup-ok-btn{border-radius: var(--b-r-2);background-color: var(--c-1);display: flex;flex-direction: row;align-items: center;justify-content: center;padding: 12px 20px;box-sizing: border-box;gap: 8px;font-size: 14px;color: var(--c-5);font-family:  var(--secondary-font);height: 40px;width: fit-content;transition: background-color 0.3s ease;cursor: pointer;border: none;}
 .bt1:hover, #popup-ok-btn{background-color: var(--c-8);}
@@ -54,7 +54,7 @@ section{padding-top: 100px;padding-bottom: 100px;}
     .h-banner .carousel-inner{height: 100vh;background: #000;display: block;min-height: 600px;}
     .h-banner .carousel-inner .carousel-item{height: 100%;}
     .h-banner .carousel-inner img{height: 100%;}
-    .h-banner .carousel-inner .carousel-item::after, body.subpages .sub-banner::after{content: "";height: 100%;left: 0;position: absolute;top: 0;width: 100%;z-index: 1;background: linear-gradient(242.28deg, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.5));}
+    .h-banner .carousel-inner .carousel-item::after, body.subpages .sub-banner::after{content: "";height: 100%;left: 0;position: absolute;top: 0;width: 100%;z-index: 1;background: linear-gradient(242.28deg, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.3));}
     .h-banner .carousel-inner .carousel-item .banner-title{left: 100px;bottom: 0;z-index: 2;}
     .h-banner .carousel-inner .carousel-item .banner-title h1{font-size: var(--f-s-10);color: var(--c-5);}
 /* h-banner End*/
@@ -163,7 +163,7 @@ body.subpages section.c-banner{padding-bottom: 0px;padding-top: 0px;}
 .c-banner .sub-banner{height: 480px;position: relative;}
 .c-banner .sub-banner img{height: 100%;}
 .c-banner .sub-banner .subbanner-title{z-index: 2;}
-.c-banner .sub-banner .subbanner-title h1{color: var(--c-5);font-size: var(--f-s-8);font-weight: var(--f-w-6);text-transform: uppercase;}
+.c-banner .sub-banner .subbanner-title h1{color: var(--c-5);font-size: var(--f-s-8);font-weight: var(--f-w-5);text-transform: uppercase;}
 
 .about-poi .serve-poi{text-transform: uppercase;font-weight: var(--f-w-6);}
 .about-poi .poi-para{margin-left: 20px;} 
@@ -226,6 +226,7 @@ body.subpages #New_Updates{background-color: var(--c-4);}
   .item-h .m-lo{margin-top: 60px;height: 120px !important;}
   header{padding: 10px 54px;}
 }
+@media  (min-width: 1200px){.container-lg{max-width: 1440px !important;}}
 @media (max-width: 991.98px){
   .item-h .m-lo{margin-top: 10px;height: 100px !important;}
   header{padding: 10px 24px;}
@@ -253,7 +254,6 @@ body.subpages #New_Updates{background-color: var(--c-4);}
     
 @media (min-width: 992px){
   .navigation{position: static;height: auto;width: auto;flex-direction: row;align-items: center;background: transparent;padding: 0;}
-  .container-lg{max-width: 1440px !important;}
 }
 
 @media (max-width: 768px){
