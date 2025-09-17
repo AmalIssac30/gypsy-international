@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*:root_start*/
 :root {
     --primary-font: "Playfair", serif !important;
@@ -61,4 +62,69 @@ body, p, a, strong {font-size: var(--body-font);font-family: var(--secondary-fon
 .f-w-5 {    font-weight: var(--f-w-5);}
 .f-w-6 {    font-weight: var(--f-w-6);}
 .f-w-b {    font-weight: var(--f-w-b);}
+=======
+/*:root_start*/
+:root {
+    --primary-font: "Playfair", serif !important;
+    --secondary-font: "Poppins", sans-serif !important;
+    /* Font size */
+    --html-font: 16px;
+    --f-s--2: .75rem; /*  (0.75rem / 12px), label-small*/
+    --f-s--1: .875rem; /*  (0.88rem / 14px), label-medium*/
+    --f-s-0: .875rem; /*  (0.88rem / 14px), body-small*/
+    --f-s-1: 1rem; /*  (1rem / 16px),    body-medium*/
+    --f-s-2: max(1rem,min(.916667rem + .37037vw,1.25rem)); /*  (1.25rem / 20px), body-large*/
+    --f-s-3: max(1.25rem,min(1.16667rem + .37037vw,1.5rem)); /*  (1.5rem / 24px),  title-small*/
+    --f-s-4: max(1.25rem,min(1.16667rem + .37037vw,1.5rem)); /*  (1.5rem / 24px),  title-medium*/
+    --f-s-5: max(1.25rem,min(1rem + 1.11111vw,2rem)); /*  (2.0rem / 32px),  title-large*/
+    --f-s-6: max(1.25rem,min(1rem + 1.11111vw,2rem)); /*  (2rem / 32px),    headline-small*/
+    --f-s-7: max(1.5rem,min(1rem + 2.22222vw,3rem)); /*  (3rem / 48px),    headline-medium*/
+    --f-s-8: max(1.5rem,min(.833333rem + 2.96296vw,3.5rem)); /*  (3.5rem / 56px),  headline-large*/
+    --f-s-9: max(2rem,min(1.33333rem + 2.96296vw,4rem)); /*  (4rem / 64px),     display-small*/
+    --f-s-10: max(2rem,min(.666667rem + 5.92593vw,6rem)); /*  (6rem / 96px),    display-medium*/
+    --f-s-11: max(3rem,min(2.6rem + 5.92593vw,7.5rem)); /*  (6rem / 120px),   custom*/
+    --body-font: max(16px,min(16px,1.6rem));
+    
+    --f-w-1: 100;
+    --f-w-2: 200;
+    --f-w-3: 300;
+    --f-w-4: 400;
+    --f-w-5: 500;
+    --f-w-6: 600;
+    --f-w-b: bold;
+    --f-w-n: normal;
+    --c-1: #05C590;  /*#ED2127;*/
+    --c-2: #003A66;
+    --c-3: #000000; 
+    --c-4: #F2F4F7; /*bg-color*/
+    --c-5: #FFFFFF; 
+    --c-6: #7A8A9E; /*text-light-color*/
+    --c-7: rgba(0, 0, 0, 0.1); /*boader-color*/
+    --c-8: #0ea67b; /*btn hover */
+    --general-font-size: 50px;
+    --sp: 0px;
+    --l-h-1: 20px;
+    --l-h-2: 24px;
+    --l-h-3: 28px;
+    --l-h-4: 32px;
+    --l-h-n: normal;
+    --fixedheight: calc(100vh - 0px);
+    --b-r-1: 6px;
+    --b-r-2: 8px;
+    --b-r-3: 12px;
+    --b-r-4: 24px;
+    --size: 850;
+}
+body, p, a, strong {font-size: var(--body-font);font-family: var(--secondary-font) !important;}
+.p-f {font-family: var(--primary-font);}
+.s-f {font-family: var(--secondary-font);}
+
+.f-w-1 {    font-weight: var(--f-w-1);}
+.f-w-2 {    font-weight: var(--f-w-2);}
+.f-w-3 {    font-weight: var(--f-w-3);}
+.f-w-4 {    font-weight: var(--f-w-4) !important;}
+.f-w-5 {    font-weight: var(--f-w-5);}
+.f-w-6 {    font-weight: var(--f-w-6);}
+.f-w-b {    font-weight: var(--f-w-b);}
+>>>>>>> a31d128d62e35c539c63cab6e6f7400cc465dd2a
 .f-w-n {    font-weight: var(--f-w-n);}
