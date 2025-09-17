@@ -1,0 +1,13 @@
+# robots.txt for Gypsy International Visa Consultancy
+
+User-agent: *
+Allow: /
+
+# Block unnecessary files/folders from indexing
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.gypsy-international.com/sitemap.php
